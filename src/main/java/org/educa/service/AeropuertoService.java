@@ -13,6 +13,12 @@ public class AeropuertoService {
 
     private final AeropuertoDAO aeropuertoDAO = new AeropuertoDAOImpl();
 
+    /**
+     * Finds all the airports
+     *
+     * @return the {@link List} of {@link AeropuertoEntity} found
+     * @throws SQLException if a database error occurs
+     */
     public List<AeropuertoEntity> findAll() throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             return aeropuertoDAO.findAll(connection);
