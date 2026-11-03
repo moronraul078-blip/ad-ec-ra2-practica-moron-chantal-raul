@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e00ec698-18ef-4a3e-bf1d-5581e7a2cd20" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/educa/dao/ClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/educa/dao/ClienteDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/educa/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/educa/service/ClienteService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0072389692335186" />
+      <entry key="MS500" value="1.3731945958242382" />
+      <entry key="S2" value="1.7815987154021993" />
+      <entry key="S5" value="1.9065593869846102" />
+      <entry key="S10" value="1.9961621724591203" />
+      <entry key="S30" value="3.145238378444943" />
+      <entry key="S60" value="5.098704098615241" />
+      <entry key="M2" value="8.216652791117243" />
+      <entry key="M5" value="14.652745722481777" />
+      <entry key="M10" value="20.96734440759769" />
+      <entry key="M15" value="25.28637992968541" />
+      <entry key="M30" value="34.55958455982241" />
+      <entry key="H1" value="44.4759027636282" />
+      <entry key="H2" value="52.24283692952797" />
+      <entry key="H4" value="57.17668984707927" />
+      <entry key="D1" value="61.96052095022422" />
+      <entry key="W1" value="62.849712781680154" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0156358655126863E-245" />
+      <entry key="MS500" value="1.003107796182313E-49" />
+      <entry key="S2" value="5.627777274815116E-13" />
+      <entry key="S5" value="1.2593163183541796E-5" />
+      <entry key="S10" value="0.0035507361714122807" />
+      <entry key="S30" value="0.18127288692313637" />
+      <entry key="S60" value="0.7994582808683685" />
+      <entry key="M2" value="2.4386389469027705" />
+      <entry key="M5" value="7.324263007098496" />
+      <entry key="M10" value="13.009606934541267" />
+      <entry key="M15" value="16.79843058116645" />
+      <entry key="M30" value="23.81487517073518" />
+      <entry key="H1" value="30.2592173820172" />
+      <entry key="H2" value="34.90795801512381" />
+      <entry key="H4" value="37.74303852623093" />
+      <entry key="D1" value="40.424836277036285" />
+      <entry key="W1" value="40.91699874788582" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.010026885129788752" />
+      <entry key="MS500" value="0.6704832588361981" />
+      <entry key="S2" value="1.5192212217083256" />
+      <entry key="S5" value="1.7917647367217473" />
+      <entry key="S10" value="1.933677710007309" />
+      <entry key="S30" value="3.245362126364286" />
+      <entry key="S60" value="5.81160877512521" />
+      <entry key="M2" value="10.579593898630582" />
+      <entry key="M5" value="21.919654380937963" />
+      <entry key="M10" value="33.93415117938582" />
+      <entry key="M15" value="42.04965210033099" />
+      <entry key="M30" value="58.3499821561988" />
+      <entry key="H1" value="74.71938284201245" />
+      <entry key="H2" value="87.1416026681211" />
+      <entry key="H4" value="94.91471952615704" />
+      <entry key="D1" value="102.38445649907452" />
+      <entry key="W1" value="103.76658111439286" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3LBmMY85CIkW4O6MOrRSlB5wHRB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "actividad1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/alumnotd/IdeaProjects/ad-ec-ra2-practica-moron-chantal-raul",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.educa.dao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Trabajo\Docencia\AD\ra2\ad-ec-ra2-practica\src\main\java\org\educa" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e00ec698-18ef-4a3e-bf1d-5581e7a2cd20" name="Changes" comment="" />
+      <created>1792935787345</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1792935787345</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
