@@ -1,17 +1,24 @@
 package org.educa.service;
 
+import org.educa.dao.VueloDAO;
+import org.educa.dao.VueloDAOImpl;
 import org.educa.entity.AeropuertoEntity;
 import org.educa.entity.VueloEntity;
+import org.educa.pool.ConnectionPool;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class VueloService {
 
+    private final VueloDAO vueloDAO = new VueloDAOImpl();
 
     public List<VueloEntity> findByOrigen(AeropuertoEntity origen) throws SQLException {
-        return null;
+        try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
+            return vueloDAO.findByOrigen(connection, origen);
+        }
     }
 
     public BigDecimal getPrecioBase(VueloEntity vuelo) {
