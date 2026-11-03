@@ -14,7 +14,13 @@ public class ReservaService {
 
     private final ReservaDAO reservaDAO = new ReservaDAOImpl();
 
-
+    /**
+     * Finds all the bookings of a client
+     *
+     * @param cliente the {@link ClienteEntity} whose bookings are searched
+     * @return the {@link List} of {@link ReservaEntity} found
+     * @throws SQLException if a database error occurs
+     */
     public List<ReservaEntity> findByCliente(ClienteEntity cliente) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             return reservaDAO.findByCliente(connection, cliente);
