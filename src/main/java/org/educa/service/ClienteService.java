@@ -19,5 +19,8 @@ public class ClienteService {
     }
 
     public void saveCliente(ClienteEntity cliente) throws SQLException {
+        try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
+            this.clienteDAO.saveCliente(connection, cliente);
+        }
     }
 }

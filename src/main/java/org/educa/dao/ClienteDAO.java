@@ -7,4 +7,6 @@ import java.sql.SQLException;
 
 public interface ClienteDAO {
     ClienteEntity findByDNI(Connection connection, String dni) throws SQLException;
+
+    void saveCliente(Connection connection, ClienteEntity cliente) throws SQLException;
 }
