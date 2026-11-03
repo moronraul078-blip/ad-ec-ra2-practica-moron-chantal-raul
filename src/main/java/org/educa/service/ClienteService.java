@@ -30,7 +30,7 @@ public class ClienteService {
      *
      * @param cliente the {@link ClienteEntity} to save
      * @throws SQLException if a database error occurs
-     */goit
+     */
     public void saveCliente(ClienteEntity cliente) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             this.clienteDAO.saveCliente(connection, cliente);
