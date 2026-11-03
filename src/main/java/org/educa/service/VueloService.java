@@ -32,6 +32,12 @@ public class VueloService {
         }
     }
 
+    /**
+     * Calculates the base price of a flight according to its duration
+     *
+     * @param vuelo the {@link VueloEntity} whose price is calculated
+     * @return the {@link BigDecimal} base price rounded to two decimals
+     */
     public BigDecimal getPrecioBase(VueloEntity vuelo) {
         return new BigDecimal(Duration.between(vuelo.getFecSalida(), vuelo.getFecLlegada()).toMinutes())
                 .multiply(PRECIO_POR_MINUTO)
