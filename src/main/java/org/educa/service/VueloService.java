@@ -15,6 +15,13 @@ public class VueloService {
 
     private final VueloDAO vueloDAO = new VueloDAOImpl();
 
+    /**
+     * Finds the non cancelled flights departing from an airport
+     *
+     * @param origen the {@link AeropuertoEntity} the flights depart from
+     * @return the {@link List} of {@link VueloEntity} found
+     * @throws SQLException if a database error occurs
+     */
     public List<VueloEntity> findByOrigen(AeropuertoEntity origen) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             return vueloDAO.findByOrigen(connection, origen);
