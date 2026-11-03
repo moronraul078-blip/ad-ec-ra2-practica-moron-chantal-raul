@@ -7,13 +7,17 @@ import org.educa.entity.VueloEntity;
 import org.educa.pool.ConnectionPool;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.Duration;
 import java.util.List;
 
 public class VueloService {
 
     private final VueloDAO vueloDAO = new VueloDAOImpl();
+
+    private static final BigDecimal PRECIO_POR_MINUTO = BigDecimal.valueOf(0.75);
 
     /**
      * Finds the non cancelled flights departing from an airport
@@ -29,6 +33,8 @@ public class VueloService {
     }
 
     public BigDecimal getPrecioBase(VueloEntity vuelo) {
-        return null;
+        return new BigDecimal(Duration.between(vuelo.getFecSalida(), vuelo.getFecLlegada()).toMinutes())
+                .multiply(PRECIO_POR_MINUTO)
+                .setScale(2, RoundingMode.HALF_UP);
     }
 }
