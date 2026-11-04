@@ -27,7 +27,7 @@ public class VueloService {
      */
     public List<VueloEntity> findByOrigen(AeropuertoEntity origen) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
-            return vueloDAO.findByOrigen(connection, origen);
+            return this.vueloDAO.findByOrigen(connection, origen);
         }
     }
 

@@ -16,6 +16,15 @@ public class ReservaDAOImpl implements ReservaDAO {
             "SELECT id_reserva, cod_reserva, fec_reserva, estado "
                     + "FROM reservas WHERE id_cliente = ? ORDER BY fec_reserva";
 
+    private static final String SAVE =
+            "INSERT INTO reservas (cod_reserva, id_cliente) "
+                    + "VALUES (?, ?)";
+
+    private static final String EXISTS_BY_COD_RESERVA =
+            "SELECT 1 FROM reservas WHERE cod_reserva = ?";
+
+    private static final String[] GENERATED_ID = {"id_reserva"};
+
     @Override
     public List<ReservaEntity> findByCliente(Connection connection, ClienteEntity cliente) throws SQLException {
         List<ReservaEntity> reservas = new ArrayList<>();
@@ -27,6 +36,30 @@ public class ReservaDAOImpl implements ReservaDAO {
                 }
             }
             return reservas;
+        }
+    }
+
+    @Override
+    public void save(Connection connection, ReservaEntity reserva) throws SQLException {
+        try (PreparedStatement ps = connection.prepareStatement(SAVE, GENERATED_ID)) {
+            ps.setString(1, reserva.getCodReserva());
+            ps.setInt(2, reserva.getCliente().getIdCliente());
+            ps.executeUpdate();
+            try (ResultSet keys = ps.getGeneratedKeys()) {
+                if (keys.next()) {
+                    reserva.setIdReserva(keys.getInt(1));
+                }
+            }
+        }
+    }
+
+    @Override
+    public boolean existsByCodReserva(Connection connection, String codReserva) throws SQLException {
+        try (PreparedStatement ps = connection.prepareStatement(EXISTS_BY_COD_RESERVA)) {
+            ps.setString(1, codReserva);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
         }
     }
 

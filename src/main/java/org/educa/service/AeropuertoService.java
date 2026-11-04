@@ -21,7 +21,7 @@ public class AeropuertoService {
      */
     public List<AeropuertoEntity> findAll() throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
-            return aeropuertoDAO.findAll(connection);
+            return this.aeropuertoDAO.findAll(connection);
         }
     }
 }

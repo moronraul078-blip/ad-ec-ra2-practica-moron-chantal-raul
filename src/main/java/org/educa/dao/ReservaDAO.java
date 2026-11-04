@@ -18,4 +18,8 @@ public interface ReservaDAO {
      * @throws SQLException if a database error occurs
      */
     List<ReservaEntity> findByCliente(Connection connection, ClienteEntity cliente) throws SQLException;
+
+    void save(Connection connection, ReservaEntity reserva) throws SQLException;
+
+    boolean existsByCodReserva(Connection connection, String codReserva) throws SQLException;
 }
