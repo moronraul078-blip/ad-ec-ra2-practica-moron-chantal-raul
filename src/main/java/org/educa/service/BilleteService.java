@@ -55,6 +55,13 @@ public class BilleteService {
         return descuento;
     }
 
+    /**
+     * Saves a ticket using the connection of the current transaction
+     *
+     * @param connection the {@link Connection} of the current transaction
+     * @param billete    the {@link BilleteEntity} to save
+     * @throws SQLException if a database error occurs
+     */
     public void save(Connection connection, BilleteEntity billete) throws SQLException {
         this.billeteDAO.save(connection, billete);
     }
