@@ -28,10 +28,12 @@ public class BilleteService {
      * @param numReservas the number of previous bookings of the client
      */
     public void calculatePrecio(BilleteEntity billete, int numReservas) {
-        billete.setPrecio(this.vueloService.getPrecioBase(billete.getVuelo())
-                .add(billete.getAsiento().getSuplemento())
-                .multiply(descuentoEdad(billete.getPasajero().getFecNac(), billete.getVuelo().getFecSalida()))
-                .multiply(descuentoReservas(numReservas)).setScale(2, RoundingMode.HALF_UP));
+        BigDecimal precioBase = this.vueloService.getPrecioBase(billete.getVuelo());
+        BigDecimal precioConSuplemento = precioBase.add(billete.getAsiento().getSuplemento());
+        BigDecimal precioConDescuentoEdad = precioConSuplemento.multiply(
+                descuentoEdad(billete.getPasajero().getFecNac(), billete.getVuelo().getFecSalida()));
+        BigDecimal precioFinal = precioConDescuentoEdad.multiply(descuentoReservas(numReservas));
+        billete.setPrecio(precioFinal.setScale(2, RoundingMode.HALF_UP));
     }
 
     private BigDecimal descuentoEdad(LocalDate fecNac, LocalDateTime fecSalida) {
