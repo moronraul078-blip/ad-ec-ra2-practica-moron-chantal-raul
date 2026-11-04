@@ -17,7 +17,6 @@ public interface ClienteDAO {
      */
     ClienteEntity findByDNI(Connection connection, String dni) throws SQLException;
 
-
     /**
      * Saves a new client and sets its generated id
      *

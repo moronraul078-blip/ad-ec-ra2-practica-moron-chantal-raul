@@ -15,7 +15,7 @@ import java.util.List;
 
 public class VueloService {
 
-    private static final BigDecimal PRECIO_POR_MINUTO = BigDecimal.valueOf(0.75);
+    private static final BigDecimal PRECIO_POR_MINUTO = new BigDecimal("0.75");
     private final VueloDAO vueloDAO = new VueloDAOImpl();
 
     /**

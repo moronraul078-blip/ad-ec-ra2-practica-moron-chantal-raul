@@ -8,26 +8,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteDAOImpl implements ClienteDAO {
+
     private static final String FIND_BY_DNI =
             "SELECT id_cliente, dni, nombre, p_apellido, s_apellido, email, telefono "
                     + "FROM clientes WHERE dni = ?";
 
     private static final String SAVE_CLIENTE =
-            "INSERT into clientes (dni, nombre, p_apellido, s_apellido, email, telefono) "
-                    + "VALUES (?,?,?,?,?,?)";
+            "INSERT INTO clientes (dni, nombre, p_apellido, s_apellido, email, telefono) "
+                    + "VALUES (?, ?, ?, ?, ?, ?)";
 
     private static final String[] GENERATED_ID = {"id_cliente"};
 
     @Override
     public ClienteEntity findByDNI(Connection connection, String dni) throws SQLException {
+        ClienteEntity cliente = null;
         try (PreparedStatement ps = connection.prepareStatement(FIND_BY_DNI)) {
             ps.setString(1, dni);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return mapCliente(rs);
-                } else {
-                    return null;
+                    cliente = mapCliente(rs);
                 }
+                return cliente;
             }
         }
     }

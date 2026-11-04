@@ -23,7 +23,7 @@ public class ReservaDAOImpl implements ReservaDAO {
     private static final String EXISTS_BY_COD_RESERVA =
             "SELECT 1 FROM reservas WHERE cod_reserva = ?";
 
-    private static final String[] GENERATED_ID = {"id_reserva"};
+    private static final String[] GENERATED_COLUMNS = {"id_reserva", "fec_reserva", "estado"};
 
     @Override
     public List<ReservaEntity> findByCliente(Connection connection, ClienteEntity cliente) throws SQLException {
@@ -41,13 +41,15 @@ public class ReservaDAOImpl implements ReservaDAO {
 
     @Override
     public void save(Connection connection, ReservaEntity reserva) throws SQLException {
-        try (PreparedStatement ps = connection.prepareStatement(SAVE, GENERATED_ID)) {
+        try (PreparedStatement ps = connection.prepareStatement(SAVE, GENERATED_COLUMNS)) {
             ps.setString(1, reserva.getCodReserva());
             ps.setInt(2, reserva.getCliente().getIdCliente());
             ps.executeUpdate();
             try (ResultSet keys = ps.getGeneratedKeys()) {
                 if (keys.next()) {
-                    reserva.setIdReserva(keys.getInt(1));
+                    reserva.setIdReserva(keys.getInt("id_reserva"));
+                    reserva.setFecReserva(keys.getTimestamp("fec_reserva").toLocalDateTime());
+                    reserva.setEstado(keys.getString("estado"));
                 }
             }
         }

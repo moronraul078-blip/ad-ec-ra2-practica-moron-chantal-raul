@@ -23,7 +23,7 @@ public class AsientoDAOImpl implements AsientoDAO {
     public List<AsientoEntity> findDisponibles(Connection connection, VueloEntity vuelo) throws SQLException {
         List<AsientoEntity> asientos = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(FIND_DISPONIBLES)) {
-            ps.setInt(1, vuelo.getIdAvion());
+            ps.setInt(1, vuelo.getIdVuelo());
             ps.setInt(2, vuelo.getIdAvion());
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {

@@ -12,7 +12,7 @@ import java.util.List;
 public class AeropuertoDAOImpl implements AeropuertoDAO {
 
     private static final String FIND_ALL = "SELECT id_aeropuerto, cod_iata, nombre, ciudad, pais "
-            + "FROM aeropuertos";
+            + "FROM aeropuertos ORDER BY id_aeropuerto";
 
     @Override
     public List<AeropuertoEntity> findAll(Connection connection) throws SQLException {

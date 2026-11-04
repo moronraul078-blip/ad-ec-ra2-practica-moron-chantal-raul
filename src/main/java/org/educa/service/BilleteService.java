@@ -20,7 +20,6 @@ public class BilleteService {
     private static final BigDecimal FACTOR_INFANTIL = new BigDecimal("0.80");
     private static final BigDecimal FACTOR_RESERVAS = new BigDecimal("0.90");
 
-
     private final VueloService vueloService = new VueloService();
     private final BilleteDAO billeteDAO = new BilleteDAOImpl();
 
