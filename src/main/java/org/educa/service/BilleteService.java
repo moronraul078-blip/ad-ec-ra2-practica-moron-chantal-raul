@@ -21,6 +21,12 @@ public class BilleteService {
 
     private final VueloService vueloService = new VueloService();
 
+    /**
+     * Calculates the final price of a ticket applying the child and frequent client discounts
+     *
+     * @param billete the {@link BilleteEntity} whose price is calculated and set
+     * @param numReservas the number of previous bookings of the client
+     */
     public void calculatePrecio(BilleteEntity billete, int numReservas) {
         billete.setPrecio(this.vueloService.getPrecioBase(billete.getVuelo())
                 .add(billete.getAsiento().getSuplemento())
