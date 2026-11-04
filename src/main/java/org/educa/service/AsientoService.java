@@ -20,6 +20,13 @@ public class AsientoService {
 
     private final AsientoDAO asientoDAO = new AsientoDAOImpl();
 
+    /**
+     * Finds the free seats of a flight with their class supplement
+     *
+     * @param vuelo the {@link VueloEntity} whose free seats are searched
+     * @return the {@link List} of {@link AsientoEntity} without a ticket for that flight
+     * @throws SQLException if a database error occurs
+     */
     public List<AsientoEntity> findDisponibles(VueloEntity vuelo) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             List<AsientoEntity> asientos = this.asientoDAO.findDisponibles(connection, vuelo);
