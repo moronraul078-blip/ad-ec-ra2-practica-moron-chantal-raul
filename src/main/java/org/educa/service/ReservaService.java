@@ -31,6 +31,12 @@ public class ReservaService {
         }
     }
 
+    /**
+     * Saves a booking with its passengers and tickets in a single transaction
+     *
+     * @param reserva the {@link ReservaEntity} to save
+     * @throws SQLException if a database error occurs, in which case nothing is saved
+     */
     public void save(ReservaEntity reserva) throws SQLException {
         try (Connection connection = ConnectionPool.getDataSource().getConnection()) {
             connection.setAutoCommit(false);
