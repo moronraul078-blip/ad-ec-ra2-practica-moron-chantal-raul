@@ -23,7 +23,7 @@ public interface ReservaDAO {
      * Saves a new booking and sets its generated id
      *
      * @param connection the {@link Connection} of the current transaction
-     * @param reserva the {@link ReservaEntity} to save
+     * @param reserva    the {@link ReservaEntity} to save
      * @throws SQLException if a database error occurs
      */
     void save(Connection connection, ReservaEntity reserva) throws SQLException;
