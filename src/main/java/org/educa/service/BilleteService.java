@@ -1,5 +1,7 @@
 package org.educa.service;
 
+import org.educa.dao.BilleteDAO;
+import org.educa.dao.BilleteDAOImpl;
 import org.educa.entity.BilleteEntity;
 
 import java.math.BigDecimal;
@@ -20,6 +22,7 @@ public class BilleteService {
 
 
     private final VueloService vueloService = new VueloService();
+    private final BilleteDAO billeteDAO = new BilleteDAOImpl();
 
     /**
      * Calculates the final price of a ticket applying the child and frequent client discounts
@@ -53,6 +56,6 @@ public class BilleteService {
     }
 
     public void save(Connection connection, BilleteEntity billete) throws SQLException {
-        //TODO
+        this.billeteDAO.save(connection, billete);
     }
 }
