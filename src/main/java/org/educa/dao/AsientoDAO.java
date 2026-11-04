@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface AsientoDAO {
+
     /**
      * Finds the seats of the flight aircraft that have no ticket for that flight
      *

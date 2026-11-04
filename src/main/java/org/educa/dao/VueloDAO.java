@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface VueloDAO {
+
     /**
      * Finds the non cancelled flights departing from an airport ordered by departure date
      *
