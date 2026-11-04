@@ -15,9 +15,8 @@ import java.util.List;
 
 public class VueloService {
 
-    private final VueloDAO vueloDAO = new VueloDAOImpl();
-
     private static final BigDecimal PRECIO_POR_MINUTO = BigDecimal.valueOf(0.75);
+    private final VueloDAO vueloDAO = new VueloDAOImpl();
 
     /**
      * Finds the non cancelled flights departing from an airport
